@@ -82,7 +82,7 @@ with open("data/logs.txt", mode='r') as logs:
         row = logs.readline().lower().rstrip()
 
 # STEP 3 : write to output file
-with open("output/output.txt", mode='w') as output:
+with open("output.txt", mode='w') as output:
     output.write("Tag Counts:\n")
     output.write("Tag,Count\n")
 
