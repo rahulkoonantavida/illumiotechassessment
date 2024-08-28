@@ -49,8 +49,9 @@ with open("data/logs.txt", mode='r') as logs:
     while row:
         row = row.split(" ")
         # check for missing or skipped data by checking row[13] (log-status)
-        # if true - > IGNORE LINE
+        # if true - > mark as untagged
         if row[13] == "nodata" or row[13] == "skipdata":
+            tagCounts['untagged'] = 1 + tagCounts.get('untagged', 0)
             row = logs.readline().lower().rstrip()
             continue
         # given that data is not missing or skipped,
